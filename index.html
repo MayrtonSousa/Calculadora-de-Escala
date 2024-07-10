@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,35 +7,26 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
+    <div class="container">
         <h1>Calculadora de Conversão de Comprimento de Escala</h1>
-    </header>
-
-    <main>
-        <section>
-            <h2>Conversão de Comprimento de Escala</h2>
-            <form id="converterForm">
-                <label for="medidaReal">Medida Real (metros):</label>
-                <input type="number" id="medidaReal" name="medidaReal" required step="any">
-
-                <label for="escala">Escala (centímetros):</label>
-                <input type="number" id="escala" name="escala" required step="any">
-
-                <button type="submit">Converter</button>
-            </form>
-
-            <div id="resultado">
-                <p>Resultado:</p>
-                <p id="resultadoValor"></p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>Criado por Mayrton Sousa para a disciplina de DBEC</p>
-    </footer>
-
+        <div class="form-group">
+            <label for="opcao">Escolha uma opção:</label>
+            <select id="opcao">
+                <option value="real-para-escala">Converter medida real (em metros) para escala (em centímetros)</option>
+                <option value="escala-para-real">Converter medida em escala (em centímetros) para real (em metros)</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="medida">Digite a medida:</label>
+            <input type="number" id="medida" step="any">
+        </div>
+        <div class="form-group">
+            <label for="escala">Digite a escala (ex: 50 para 1/50):</label>
+            <input type="number" id="escala" step="any">
+        </div>
+        <button onclick="calcular()">Calcular</button>
+        <div id="resultado"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
-
